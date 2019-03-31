@@ -1,0 +1,24 @@
+<!--pages/bookDetail/bookDetail.wxml-->
+<view class='page'>
+  <view class='infos'>
+    <view class='book-coverimg'>
+      <image class='book-cover' src='http://statics.zhuishushenqi.com{{bookDetail.cover}}'></image>
+    </view>
+    <view class='book-info'>
+      <text class='book-name'>{{bookDetail.title}}</text>
+      <text class='book-author'>作 者：{{bookDetail.author}}</text>
+      <text class='book-type'>类 型：{{bookDetail.majorCate}}</text>
+      <text class='up-time'>更新时间：{{bookDetail.updated}}</text>
+      <text class='news'>最新动态：{{bookDetail.lastChapter}}</text>
+    </view>
+  </view>
+  <text class='book-brief'>{{bookDetail.longIntro}}</text>
+  <view>
+    <button hidden='{{!isChapter}}' bindtap="onShowChapter">点击获取章节</button>
+    <view hidden="{{isChapter}}">
+      <block wx:for="{{chapterList}}" wx:key="{{index}}">
+        <view bindtap='onShowContentTap' hover-class='hover-chapter' class='chapter' data-link="{{item.link}}" >{{item.title}}</view>
+      </block>
+    </view>
+  </view>
+</view>

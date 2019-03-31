@@ -1,0 +1,5 @@
+/* pages/bookContent/bookContent.wxss */
+.pages{
+  padding:3px 5px;
+  background: rgb(222,226,228);
+}

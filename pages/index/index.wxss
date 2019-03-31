@@ -1,0 +1,33 @@
+@import "../../weui.wxss";
+.book-image{
+  width:250rpx;
+  height: 330rpx;
+  background: blue;
+}
+.book-cover{
+  width:250rpx;
+  height: 330rpx;
+}
+.book-container{
+  padding: 15rpx 0 15rpx 6rpx;
+  display: flex;
+  text-align: center;
+  width:100%;
+  
+  border-bottom:1px solid gray;
+  border-radius: 5px;
+}
+.book-hover{
+  transform: scale(0.96,0.96);
+  transition:2;
+}
+.book-info{
+  padding-left: 20rpx;
+  text-align: left;
+}
+.book-name{
+  font-size: 50rpx;
+}
+.chapter{
+  font-size: 30rpx;
+}

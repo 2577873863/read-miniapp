@@ -1,0 +1,44 @@
+<view class='swiper-container'>
+
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm='onSearchTap' />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view>
+
+    <block wx:for="{{bookList}}" wx:key="{{index}}">
+        <view data-id="{{item._id}}" bindtap="onDetailTap" class='book-container' hover-class='book-hover'>
+          <view class='book-image'>
+            <image class='book-cover' src='http://statics.zhuishushenqi.com{{item.cover}}'></image>
+          </view>
+          <view class='book-info'>
+            <view class='book-name'>
+              <text>{{item.title}}</text>
+            </view>
+            <view class='author'>
+              <text>作者：{{item.author}}</text>
+            </view>
+            <view class='type'>
+              <text>类型：{{item.majorCate}}</text>
+            </view>
+            <view class='chapter' data-bookid="{{item._id}}">
+              <text>最新章节：{{item.lastChapter}}</text>
+            </view>
+          </view>
+        </view>
+
+    </block>
+</view>

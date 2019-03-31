@@ -1,0 +1,4 @@
+<!--pages/bookContent/bookContent.wxml-->
+<view class="pages">
+  <text>{{bookContent}}</text>
+</view>
